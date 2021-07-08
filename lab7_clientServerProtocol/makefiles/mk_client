@@ -1,0 +1,16 @@
+DIRS := ../ClientRelatedFiles ../headers ../funcs
+WILDCARDS_SRCH := $(addsuffix /*.c,$(DIRS)) 
+objects = $(notdir $(patsubst %.c,%.o,$(wildcard $(WILDCARDS_SRCH)))) 
+
+client : $(objects)
+	cc -o client $(objects)
+
+VPATH := $(DIRS) 
+
+%.o: %.c
+	gcc -c -MD $(addprefix -I,$(DIRS)) $<
+include $(wildcard *.d)
+
+
+clean:
+	rm  *.o *.d client
