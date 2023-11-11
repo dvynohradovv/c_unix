@@ -1,5 +1,4 @@
-# c_linux
-Programming on C with UNIX subsystem 
+# c_unix
+Programming on C in UNIX subsystem
 
 # Odesa Mechnikov National University 
-# ОНУ им. Мечникова
